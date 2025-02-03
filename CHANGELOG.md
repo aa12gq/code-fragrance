@@ -5,7 +5,43 @@ All notable changes to the "Code Fragrance" extension will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2025-02-03
+## [0.1.0] - 2024-02-03
+
+### Added
+
+- 团队风格配置功能增强：
+  - 添加预设模板：严格模式、平衡模式、灵活模式
+  - 详细的特征说明和评分标准
+  - 配置向导：引导用户根据团队特点选择合适的配置
+  - 可视化预览：实时展示配置效果
+  - 配置导入/导出：支持团队间共享配置
+  - 智能建议：基于团队代码自动推荐配置
+- 界面交互优化：
+  - 添加雷达图可视化展示
+  - 优化参数调整界面
+  - 添加详细的帮助说明
+  - 实时预览功能
+- 团队协作功能：
+  - 配置版本控制
+  - 团队风格共享
+  - 配置变更追踪
+
+### Enhanced
+
+- 优化代码分析算法
+- 改进配置界面交互体验
+- 提升配置导入/导出功能的稳定性
+- 增强团队风格评估的准确性
+
+### Technical Details
+
+- 使用 Chart.js 实现数据可视化
+- 实现配置向导的多步骤引导
+- 添加配置文件的版本控制支持
+- 优化团队风格评估算法
+- 改进错误处理机制
+
+## [0.0.1] - 2024-02-03
 
 ### Added
 

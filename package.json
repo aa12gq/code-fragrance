@@ -2,7 +2,7 @@
   "name": "code-fragrance",
   "displayName": "Code Fragrance",
   "description": "一个创新的代码质量分析工具，将代码特征转化为可视化的香气特征，帮助团队保持一致的代码风格",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "aa12gq",
   "icon": "resources/icon.png",
   "license": "MIT",
@@ -20,7 +20,8 @@
     "Formatters"
   ],
   "activationEvents": [
-    "onView:code-fragrance.fragranceView"
+    "onView:code-fragrance.fragranceView",
+    "onView:code-fragrance.teamStyle"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -33,6 +34,21 @@
       {
         "command": "code-fragrance.analyzeWorkspace",
         "title": "分析工作区的代码香气",
+        "category": "Code Fragrance"
+      },
+      {
+        "command": "code-fragrance.importTeamStyle",
+        "title": "导入团队风格配置",
+        "category": "Code Fragrance"
+      },
+      {
+        "command": "code-fragrance.exportTeamStyle",
+        "title": "导出团队风格配置",
+        "category": "Code Fragrance"
+      },
+      {
+        "command": "code-fragrance.openStyleWizard",
+        "title": "打开团队风格配置向导",
         "category": "Code Fragrance"
       }
     ],
@@ -70,6 +86,21 @@
           "type": "object",
           "default": null,
           "description": "团队代码风格配置"
+        },
+        "codeFragrance.autoAnalyze": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否在打开文件时自动分析代码"
+        },
+        "codeFragrance.visualPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否显示可视化预览"
+        },
+        "codeFragrance.suggestionEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否启用智能建议"
         }
       }
     },
@@ -84,6 +115,12 @@
         "command": "code-fragrance.analyzeWorkspace",
         "key": "alt+shift+w",
         "mac": "cmd+shift+w",
+        "when": "workspaceExists"
+      },
+      {
+        "command": "code-fragrance.openStyleWizard",
+        "key": "alt+shift+s",
+        "mac": "cmd+shift+s",
         "when": "workspaceExists"
       }
     ]
@@ -103,7 +140,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "chart.js": "^4.4.1",
     "escomplex": "2.0.0-alpha",
     "jscpd": "^3.5.10"
   }
