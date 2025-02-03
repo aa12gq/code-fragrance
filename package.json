@@ -1,0 +1,114 @@
+{
+  "name": "code-fragrance",
+  "displayName": "Code Fragrance",
+  "description": "一个创新的代码质量分析工具，将代码特征转化为可视化的香气特征，帮助团队保持一致的代码风格",
+  "version": "0.0.1",
+  "icon": "resources/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aa12gq/code-fragrance.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization",
+    "Programming Languages",
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onView:code-fragrance.fragranceView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-fragrance.analyzeFile",
+        "title": "分析当前文件的代码香气",
+        "category": "Code Fragrance"
+      },
+      {
+        "command": "code-fragrance.analyzeWorkspace",
+        "title": "分析工作区的代码香气",
+        "category": "Code Fragrance"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "code-fragrance",
+          "title": "Code Fragrance",
+          "icon": "$(beaker)"
+        }
+      ]
+    },
+    "views": {
+      "code-fragrance": [
+        {
+          "type": "webview",
+          "id": "code-fragrance.fragranceView",
+          "name": "代码香气分析",
+          "icon": "$(graph)",
+          "contextualTitle": "代码香气分析"
+        },
+        {
+          "type": "webview",
+          "id": "code-fragrance.teamStyle",
+          "name": "团队风格配置",
+          "icon": "$(settings-gear)",
+          "contextualTitle": "团队风格配置"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Code Fragrance",
+      "properties": {
+        "codeFragrance.teamStyle": {
+          "type": "object",
+          "default": {
+            "namingStyle": "camelCase",
+            "maxFunctionLength": 30,
+            "minCommentRatio": 0.1,
+            "maxComplexity": 10
+          },
+          "description": "团队代码风格配置"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "code-fragrance.analyzeFile",
+        "key": "alt+shift+f",
+        "mac": "cmd+shift+f",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "code-fragrance.analyzeWorkspace",
+        "key": "alt+shift+w",
+        "mac": "cmd+shift+w",
+        "when": "workspaceExists"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "escomplex": "2.0.0-alpha",
+    "jscpd": "^3.5.10"
+  }
+}

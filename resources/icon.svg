@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景圆形 -->
+    <circle cx="64" cy="64" r="60" fill="#2d2d2d" />
+    
+    <!-- 烧杯 -->
+    <path d="M45 85 L35 45 L35 35 Q35 30 40 30 L88 30 Q93 30 93 35 L93 45 L83 85 Q82 90 78 90 L50 90 Q46 90 45 85" 
+          fill="none" 
+          stroke="#61dafb" 
+          stroke-width="3"/>
+    
+    <!-- 烧杯颈部 -->
+    <path d="M40 35 L88 35" 
+          stroke="#61dafb" 
+          stroke-width="3"/>
+    
+    <!-- 香气线条 1 -->
+    <path d="M55 40 Q64 30 64 20 Q64 10 73 0" 
+          fill="none" 
+          stroke="#61dafb" 
+          stroke-width="2" 
+          opacity="0.6"/>
+    
+    <!-- 香气线条 2 -->
+    <path d="M65 45 Q74 35 74 25 Q74 15 83 5" 
+          fill="none" 
+          stroke="#61dafb" 
+          stroke-width="2" 
+          opacity="0.4"/>
+    
+    <!-- 香气线条 3 -->
+    <path d="M45 45 Q54 35 54 25 Q54 15 63 5" 
+          fill="none" 
+          stroke="#61dafb" 
+          stroke-width="2" 
+          opacity="0.8"/>
+    
+    <!-- 液体 -->
+    <path d="M38 75 L42 45 L86 45 L90 75 Q89 85 85 85 L43 85 Q39 85 38 75" 
+          fill="#61dafb" 
+          opacity="0.3"/>
+    
+    <!-- 代码符号 { -->
+    <path d="M55 55 L50 60 L55 65" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="2"/>
+    
+    <!-- 代码符号 } -->
+    <path d="M75 55 L80 60 L75 65" 
+          fill="none" 
+          stroke="#ffffff" 
+          stroke-width="2"/>
+</svg> 
