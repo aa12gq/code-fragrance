@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { CodeAnalyzer } from "./analyzers/CodeAnalyzer";
 import { FragranceViewProvider } from "./providers/FragranceViewProvider";
+import { TeamStyleViewProvider } from "./providers/TeamStyleViewProvider";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log("Code Fragrance is now active!");
@@ -10,12 +11,17 @@ export function activate(context: vscode.ExtensionContext) {
 
   // 创建视图提供者
   const fragranceViewProvider = new FragranceViewProvider(context.extensionUri);
+  const teamStyleViewProvider = new TeamStyleViewProvider(context.extensionUri);
 
   // 注册视图
   context.subscriptions.push(
     vscode.window.registerWebviewViewProvider(
       "code-fragrance.fragranceView",
       fragranceViewProvider
+    ),
+    vscode.window.registerWebviewViewProvider(
+      "code-fragrance.teamStyle",
+      teamStyleViewProvider
     )
   );
 

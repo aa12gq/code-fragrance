@@ -3,6 +3,7 @@
   "displayName": "Code Fragrance",
   "description": "一个创新的代码质量分析工具，将代码特征转化为可视化的香气特征，帮助团队保持一致的代码风格",
   "version": "0.0.1",
+  "publisher": "aa12gq",
   "icon": "resources/icon.png",
   "license": "MIT",
   "repository": {
@@ -67,12 +68,7 @@
       "properties": {
         "codeFragrance.teamStyle": {
           "type": "object",
-          "default": {
-            "namingStyle": "camelCase",
-            "maxFunctionLength": 30,
-            "minCommentRatio": 0.1,
-            "maxComplexity": 10
-          },
+          "default": null,
           "description": "团队代码风格配置"
         }
       }
